@@ -5,7 +5,6 @@ from abc import ABCMeta, abstractmethod
 import os
 import struct
 import array
-import sys
 # sys.path.append('mnist')
 # import mnist
 
@@ -373,7 +372,8 @@ def MBGD_train_test(net, optimizer, loss, train_data, epochs, batch_size,
 
 if __name__ == "__main__":
     # 加载数据集
-    train_images, train_labels, test_images, test_labels = load_mnist('../data/MNIST/raw')
+    path = '../data/MNIST/raw'
+    train_images, train_labels, test_images, test_labels = load_mnist(path)
 
     n_train, w, h = train_images.shape
     X_train = train_images.reshape((n_train, w * h))
