@@ -1,5 +1,6 @@
 # DL from scratch
 Build wheels for deep learning model Irregularly.
+$a=b$
 - - -
 ## 1. MLP in MNIST (Python+Numpy version)
 ### Basic Principle for Backward Propagation in MLP
