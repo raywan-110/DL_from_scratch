@@ -6,7 +6,7 @@ Build wheels for deep learning model Irregularly.
   ```python
   python ./mnist_from_scratch.py
   ```
-  BTW, you need to download the MNIST dataset from http://yann.lecun.com/exdb/mnist/ and unzip it by yourself. Don't forget to set the data set path correctly.
+  BTW, you need to download the MNIST dataset from http://yann.lecun.com/exdb/mnist/ and unzip it by yourself. **Don't forget to set the data set path correctly**.
 ### Results
   - **Hyperparameters setting**
   **epochs**: 100  
