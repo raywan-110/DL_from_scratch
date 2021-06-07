@@ -5,29 +5,6 @@ from abc import ABCMeta, abstractmethod
 import os
 import struct
 import array
-# sys.path.append('mnist')
-# import mnist
-
-# def load_mnist(path):
-#     '''返回训练数据与测试数据'''
-#     # 加载与处理训练数据
-#     fd = open(os.path.join(
-#         path, 'train-images-idx3-ubyte'))  # 像素点是unsigned byte类型(8位)
-#     loaded = np.fromfile(fd, dtype=np.int8)  # 读入的字节数据，前面有 4*32bit描述信息需要删除
-#     X_train = loaded[16:].reshape(-1, 28, 28).astype(np.float)  # H*W*C
-#     fd = open(os.path.join(path, 'train-labels-idx1-ubyte'))
-#     loaded = np.fromfile(file=fd, dtype=np.uint8)  # 用整数才可以索引
-#     train_Y = loaded[8:].reshape(60000)
-#     # 加载与处理测试数据
-#     fd = open(os.path.join(
-#         path, 't10k-images-idx3-ubyte'))  # 像素点是unsigned byte类型(8位)
-#     loaded = np.fromfile(fd, dtype=np.int8)  # 读入的字节数据，前面有 4*32bit描述信息需要删除
-#     test_X = loaded[16:].reshape(-1, 28, 28).astype(np.float)  # H*W*C
-#     fd = open(os.path.join(path, 't10k-labels-idx1-ubyte'))
-#     loaded = np.fromfile(file=fd, dtype=np.uint8)  # 用整数才可以索引
-#     test_Y = loaded[8:].reshape(10000)
-#     return X_train, train_Y, test_X, test_Y
-
 
 def parse_mnist(fd):
     DATA_TYPES = {
