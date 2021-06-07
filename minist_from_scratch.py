@@ -1,4 +1,3 @@
-# from mnist.mnist import test_images, test_labels, train_images, train_labels
 import numpy as np
 from abc import ABCMeta, abstractmethod
 
