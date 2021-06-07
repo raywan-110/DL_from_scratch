@@ -1,7 +1,7 @@
 # DL from scratch
 Build wheels for deep learning model Irregularly.
 - - -
-## 1. MLP in MNIST (Python+Numpy version)
+## 1. MLP on MNIST (Python+Numpy version)
 ### Usage
   ```python
   python ./mnist_from_scratch.py
@@ -13,10 +13,15 @@ Build wheels for deep learning model Irregularly.
   **batch_size**: 128  
   **lr**: 0.01
   - **model structure**  
-  **fully connected layers**: $784\times 512\times 10$  
+  **fully connected layers**: [784 512 10]  
 
   | Activation function | Regularization| accuracy in test set|
   |:--: | :--: | :--: |
-  | sigmoid|L2 | |
-  | tanh |L2 | |  
-  | relu |L2 | 97.97% |  
+  | sigmoid|L2 | 96.87% |
+  | relu |None | 97.97% |  
+  | relu |L2 | 97.98% |  
+
+### Summary
+- mind the **numerical overflow problems** brought by the exp(·) operation(**convert to  a mathematically equivalent form to overcome them**);
+- convert the labels into **one-hot format** when computing gradient of cross-entropy loss(**incorrect calculation of gradients leads to non-convergence of training**);
+- Pay attention to the **byte order**(little/big endian) of storage when parsing the data set.

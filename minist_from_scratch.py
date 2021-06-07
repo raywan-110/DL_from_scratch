@@ -124,7 +124,7 @@ class network(object):
         return np.tanh(z)
 
     def tanh_prime(self, z):
-        return (1 - np.power(z, 2))
+        return (1 - np.power(z, 2)) # overflow 
 
     def relu(self, z):
         return np.maximum(z, 0)
@@ -166,12 +166,10 @@ class network(object):
         for l in range(2, self.num_layers):
             grad_a2z = self.actication_prime(
                 self.pure_output[-l + 1])  # 计算本层的激活函数对净输出的导数
-            #             print("grad_a2z:\n",grad_a2z)
             delta = grad_a2z * np.dot(
                 delta,
                 self.weights[-l + 1].transpose())  # weights比保存的activation刚好多一层
             grad_b[-l] = delta.mean(0, keepdims=True)
-            #             print("delta:",delta)
             grad_w[-l] = np.dot(self.activations[-l].transpose(),
                                 delta) / np.float(batch_size)
         return grad_b, grad_w
