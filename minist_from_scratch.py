@@ -124,7 +124,7 @@ class network(object):
         return np.tanh(z)
 
     def tanh_prime(self, z):
-        return (1 - np.power(z, 2)) # overflow 
+        return (1 - np.power(z, 2))  # overflow 
 
     def relu(self, z):
         return np.maximum(z, 0)
@@ -378,7 +378,7 @@ if __name__ == "__main__":
 
     # 定义模型与优化器
     net = network(sizes=[784, 512, 10], act='relu')
-    optimizer = SGD((net.bias, net.weights), lr)
+    optimizer = SGD((net.bias, net.weights), lr,weight_decay=5e-4)
 
     # 定义损失函数
     loss = cross_entropy_loss()
