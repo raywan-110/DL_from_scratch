@@ -1,16 +1,7 @@
 # DL from scratch
 Build wheels for deep learning model Irregularly.
-$a=b$
 - - -
 ## 1. MLP in MNIST (Python+Numpy version)
-### Basic Principle for Backward Propagation in MLP
-$$
-z^{l} = a^{l-1}W+b\ \ \ (a^{0}=X)\\
-a^{l} = \sigma(z^l)\ \ \ (z^{last}=\hat{y})\\
-\frac{\partial{L(y,\hat{y})}}{\partial{W^{l}}}=(a^{l-1})^{T}\delta^{l}\ \ \in(M_{l-1}\times M_l)\\
-\frac{\partial{L(y,\hat{y})}}{\partial{b^{l}}}=\delta^{l}\ \ \in(1\times M_l)\\
-\delta^{l}=\sigma(z^{l})'\odot[\delta^{l+1}(W^{l+1})^T]\ \ \in(1\times M_l)\\  
-$$
 ### Usage
   ```python
   python ./mnist_from_scratch.py
