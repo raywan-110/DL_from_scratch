@@ -16,7 +16,7 @@ Build wheels for deep learning model Irregularly.
   **fully connected layers**: $784\times 512\times 10$  
 
   | Activation function | Regularization| accuracy in test set|
-  |-- | -- | -- |
+  |:--: | :--: | :--: |
   | sigmoid|L2 | |
   | tanh |L2 | |  
-  | relu |L2 | |  
+  | relu |L2 | 97.97% |  
