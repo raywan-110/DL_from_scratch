@@ -40,12 +40,13 @@ Build wheels for deep learning model Irregularly.
   **batch_size**: 500  
   **lr**: 0.01
   - **model structure**  
-  **fully connected layers**: [784 512 10]
+  **fully connected layers**: [784 512 10]  
+
   | Activation function | Regularization| accuracy in test set|
   |:--: | :--: | :--: |
   | relu |None | 96.17% |
 
 ### Summary
 - This is the real wheel-making experience! I wrote a Matrix class based on STL to support all the calculation required by MLP and try to reproduce the function provided by Numpy and Pytorch API.
-- Since I do not optimize my code to achieve faster calculation speed, the runtime time of cpp version MLP cannot campare with Numpy version. However, from the results we can find that it could still achieve high accuracy on the test set though it was trained for only 10 epochs.
+- Since I do not optimize my code to achieve faster calculation speed, the runtime time of cpp version MLP cannot campare with Numpy version. However, from the results we can find that it could still achieve high accuracy on the test set though it was trained for only 20 epochs.
 
