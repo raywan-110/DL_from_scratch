@@ -25,3 +25,27 @@ Build wheels for deep learning model Irregularly.
 - mind the **numerical overflow problems** brought by the exp(·) operation(**convert to  a mathematically equivalent form to overcome them**);
 - convert the labels into **one-hot format** when computing gradient of cross-entropy loss(**incorrect calculation of gradients leads to non-convergence of training**);
 - Pay attention to the **byte order**(little/big endian) of storage when parsing the data set.
+
+- - -
+## 1. MLP on MNIST (Cpp+STL version)
+### Usage (in Linux environment)
+```cpp
+  cd ./src  
+  g++ -o main main.cpp
+  ./main
+```
+### Results
+  - **Hyperparameters setting**
+  **epochs**: 20  
+  **batch_size**: 500  
+  **lr**: 0.01
+  - **model structure**  
+  **fully connected layers**: [784 512 10]
+  | Activation function | Regularization| accuracy in test set|
+  |:--: | :--: | :--: |
+  | relu |None | 96.17% |
+
+### Summary
+- This is the real wheel-making experience! I wrote a Matrix class based on STL to support all the calculation required by MLP and try to reproduce the function provided by Numpy and Pytorch API.
+- Since I do not optimize my code to achieve faster calculation speed, the runtime time of cpp version MLP cannot campare with Numpy version. However, from the results we can find that it could still achieve high accuracy on the test set though it was trained for only 10 epochs.
+
