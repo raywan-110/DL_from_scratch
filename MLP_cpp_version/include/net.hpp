@@ -122,7 +122,7 @@ Matrix<dataType> net<dataType>::fp(Matrix<dataType> a)
     for (size_t i = 0; i < this->num_layers - 2; i++)
     {
         Matrix<dataType> z = act.dot(this->weights[i]) + this->bias[i];
-        act = relu<dataType>(z); // 需要好好考虑是否可行
+        act = relu<dataType>(z); 
         if (this->train)
         {
             this->activations.push_back(act);
